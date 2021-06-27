@@ -1,7 +1,7 @@
 import discord, os, random 
 from discord.ext import commands
 
-token = 'bot-token-here'
+token = 'Your-Token-Here'
 
 flashcards = [
         'Write me a union based SQL Injection syntax',
@@ -45,7 +45,7 @@ flashcards = [
     ]
 
 bot = discord.Client()
-bot = commands.Bot(command_prefix="!")
+bot = commands.Bot(command_prefix="!", self_bot=True)
 bot.remove_command('help')
 
 @bot.event
@@ -59,4 +59,4 @@ async def flashcard(ctx):
     await ctx.message.delete()
     await ctx.send(random.choice(flashcards))
 
-bot.run(token)
+bot.run(token, bot=False)
