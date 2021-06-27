@@ -55,7 +55,7 @@ async def on_ready():
 
 
 @bot.command()
-async def flashcard(ctx, member: discord.Member):
+async def flashcard(ctx):
     await ctx.message.delete()
     await ctx.send(random.choice(flashcards))
 
